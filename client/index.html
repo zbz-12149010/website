@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box" style="width: 200px; height: 200px; border: 1px solid red; padding: 20px; "></div>
+    <script>
+        // client客服端大小:指的是元素内容到内边距占据的空间大小
+        // 不包含border
+        // 1. clientWidth = width + padding - left + padding - right
+        // 2. clientHeight = height + padding - top + padding - bottom
+        // 3.clientLeft左边框大小
+        // 4. clientTop 上边框大小
+        var box = document.getElementById('box')
+        console.log(box.clientWidth, box.clientHeight);
+        console.log(box.clientTop, box.clientLeft);
+        // 获取页面的大小
+        // console.log(document.documentElement.clientWidth);
+        // console.log(document.documentElement.clientHeight);
+        // 注意
+        // 1.所有client属性都是只读的
+        // 静态失败
+        // box.clientHeight = 10;
+        // console.log(   box.clientHeight );
+        // 2.如果给元素设置display:none;客户端client属性都为0
+        // 3.尽量避免重复访问属性
+        console.time('time')
+    </script>
+</body>
+
+</html>
