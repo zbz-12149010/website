@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        button {
+            border-radius: 10%;
+            background-color: #fff;
+        }
+        
+        #panel {
+            width: 400px;
+            margin: 50px auto;
+            border: 1px solid #cccccc;
+            color: #000;
+        }
+        
+        .panel-footer {
+            text-align: center;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        
+        .panel-content {
+            margin-left: 20px;
+            margin-right: 20px;
+            font-weight: 500;
+        }
+        
+        .panel-title {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="panel">
+        <div class="panel-title">
+            <h3>千千音乐盒</h3>
+            <hr>
+        </div>
+        <div class="panel-content">
+            <input type="checkbox" name="" id="">漂洋过海来看你<br>
+            <input type="checkbox" name="" id="">漂洋过海来看你<br>
+            <input type="checkbox" name="" id="">漂洋过海来看你<br>
+            <input type="checkbox" name="" id="">漂洋过海来看你<br>
+            <input type="checkbox" name="" id="">漂洋过海来看你<br>
+            <input type="checkbox" name="" id="">漂洋过海来看你<br>
+            <input type="checkbox" name="" id="">漂洋过海来看你<br>
+            <input type="checkbox" name="" id="">漂洋过海来看你<br>
+            <input type="checkbox" name="" id="">漂洋过海来看你<br>
+
+        </div>
+        <div class="panel-footer">
+            <hr>
+            <button id="allSelect">全选</button>
+            <button id="cancelSeleck">取消全选</button>
+            <button id="reverseSelect">反选</button>
+        </div>
+    </div>
+    <script>
+        // function $(id) {
+        //     return typeof id === 'string' ? document.getElementById(id) : null;
+        // }
+        // var inputs = document.getElementsByTagName('input')
+
+
+
+        // $('allSelect').onclick = function() {
+        //     for (i = 0; i < inputs.length; i++) {
+        //         inputs[i].checked = true;
+        //     }
+        // }
+        // $('cancelSeleck').onclick = function() {
+        //     for (i = 0; i < inputs.length; i++) {
+        //         inputs[i].checked = false;
+        //     }
+        // }
+        // $('reverseSelect').onclick = function() {
+        //     for (i = 0; i < inputs.length; i++) {
+        //         inputs[i].checked = !inputs[i].checked;
+        //     }
+        // }
+        index表示第几张图片在展示》》 第index张图片有active这个类名
+        var clearActive = function() {
+            for (i = 0; i < items.length; i++) {
+                items[i].className = 'item';
+            }
+            for (i = 0; i < posints.length; i++) {
+                posints[i].className = 'posint';
+            }
+        }
+        var goIndex = function() {
+            clearActive();
+            posints[index].className = 'posint active';
+            items[index].className = 'item active';
+        }
+        var geNext = function() {
+            if (index < 4) {
+                index++;
+            } else {
+                index = 0;
+            }
+            goIndex()
+        }
+        var gePre = function() {
+            if (index == 0) {
+                index = 4;
+            } else {
+                index--;
+            }
+            goIndex()
+        }
+        geNextBtn.addEventListener('click', function() {
+            geNext();
+        })
+        goPreBtn.addEventListener('click', function() {
+            gePre();
+        })
+        for (var i = 0; i < posints.length; i++) {
+            posints[i].addEventListener('click', function() {
+                var pointIndex = this.getAttribute('data-index')
+                index = pointIndex;
+                goIndex()
+            })
+        }
+    </script>
+</body>
+
+</html>

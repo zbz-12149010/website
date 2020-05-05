@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <img src="./images/jiu1.jpg" alt="" id="flower" width="200px" height="200px">
+    <br>
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+
+    <script>
+        var flower = document.getElementById('flower')
+        var prevBtn = document.getElementById('prev')
+        var nextBtn = document.getElementById('next')
+        var btn = 1;
+        var btx = 4;
+        var btu = btn;
+        nextBtn.onclick = function() {
+            if (btu === btx) {
+                btu = btn
+            } else {
+                btu++;
+            }
+            flower.setAttribute('src', `./images/jiu${btu}.jpg`)
+
+        }
+        prevBtn.onclick = function() {
+            if (btu === btn) {
+                btu = btx
+            } else {
+                btu--;
+            }
+            flower.setAttribute('src', `./images/jiu${btu}.jpg`)
+
+        }
+    </script>
+
+</body>
+
+</html>

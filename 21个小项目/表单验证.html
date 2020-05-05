@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #prompt {
+            font-size: 12px;
+            color: #949494;
+        }
+        
+        #score {
+            border: 1px solid #cccccc;
+        }
+        
+        .right {
+            background: url('./images/right.png') no-repeat 5px center;
+            background-size: 15px;
+            padding-left: 20px;
+            color: green !important;
+        }
+        
+        .error {
+            background: url('./images/error.png') no-repeat 5px center;
+            background-size: 15px;
+            padding-left: 20px;
+            color: red !important;
+        }
+        
+        .bgu {
+            color: yellow !important;
+            background: url('./images/error.png') no-repeat 5px center;
+            background-size: 15px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="score">你的成绩是:</label>
+        <input type="text" placeholder="请输入你的分数" id="score">
+        <span id="prompt">你的成绩是</span>
+    </div>
+    <script>
+        function $(id) {
+            return typeof id === 'string' ? document.getElementById(id) : null;
+        }
+        // $('score').onblur = function() {
+        //     var value = parseFloat(this.value)
+        //         // console.log(typeof value);
+        //         // console.log(isNaN(value));
+        //     if (isNaN(value)) {
+        //         $('prompt').innerHTML = '输入的成绩不正确';
+        //         // $('prompt').setAttribute('class', 'error')
+        //         $('prompt').className = 'error'
+        //         this.style.borderColor = 'red'
+        //     } else if (value >= 0 && value <= 100) {
+        //         $('prompt').innerHTML = '输入的成绩正确';
+        //         // $('prompt').setAttribute('class', 'right')
+        //         $('prompt').className = 'right'
+        //         this.style.borderColor = 'green'
+        //     } else {
+        //         $('prompt').innerHTML = '成绩必须在10到100之间';
+        //         // $('prompt').setAttribute('class', 'right')
+        //         $('prompt').className = 'bgu'
+        //         this.style.borderColor = 'yellow'
+        //     }
+        // // }
+        // $('score').onblur = function() {
+        //     var value = parseFloat(this.value)
+        //     if (isNaN(value)) {
+        //         $('prompt').innerHTML = '你输入的成绩不正确'
+        //         $('prompt').className = 'error'
+        //         $('prompt').borderColor = 'red'
+        //     } else if (value > 0 && value < 100) {
+        //         $('prompt').innerHTML = '你输入的成绩正确'
+        //         $('prompt').className = 'right'
+        //         $('prompt').borderColor = 'green'
+        //     } else {
+        //         $('prompt').innerHTML = '你输入的成绩必须在0~10之间'
+        //         $('prompt').className = 'bgu'
+        //         $('prompt').borderColor = 'yellow'
+        //     }
+        //     $('score').onfocus = function() {
+        //         $('prompt').innerHTML = '请输入你的成绩'
+        //         $('prompt').className = '';
+        //         $('score').style.borderColor = 'cccccc';
+        //         $('score').style.outline = 'none';
+        //         $('score').value = ''
+        //     }
+        // }
+        $('score').onblur = function() {
+            var value = parseFloat(this.value)
+            if (isNaN(value)) {
+                $('prompt').innerHTML = '你输入的成绩不正确'
+                $('prompt').className = 'error'
+                $('prompt').style.borderColor = 'red'
+            } else if (value > 0 && value < 100) {
+                $('prompt').innerHTML = '你输入的成绩正确'
+                $('prompt').className = 'right'
+                $('prompt').style.borderColor = 'green'
+            } else {
+                $('prompt').innerHTML = '请输入0~100之间的数字'
+                $('prompt').className = 'bgu'
+                $('prompt').style.borderColor = 'yellow'
+            }
+            $('score').onfocus = function() {
+                $('prompt').innerHTML = '请输入你的内容'
+                $('prompt').className = '';
+                $('score').style.borderColor = 'ccc'
+                $('score').style.outline = 'none'
+                $('score').value = ''
+            }
+        }
+    </script>
+</body>
+
+</html>

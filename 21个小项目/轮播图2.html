@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrap {
+            width: 800px;
+            height: 400px;
+            position: relative;
+        }
+        
+        .list {
+            width: 500px;
+            height: 400px;
+            list-style: none;
+            position: relative;
+        }
+        
+        .item {
+            width: 100%;
+            height: 100%;
+            color: wheat;
+            font-size: 50px;
+            position: absolute;
+            opacity: 0;
+            transition: all .8;
+        }
+        
+        .item:nth-child(1) {
+            background-color: #000;
+        }
+        
+        .item:nth-child(2) {
+            background-color: red;
+        }
+        
+        .item:nth-child(3) {
+            background-color: green;
+        }
+        
+        .item:nth-child(4) {
+            background-color: #d49b1d;
+        }
+        
+        .item:nth-child(5) {
+            background-color: pink;
+        }
+        
+        .btn {
+            width: 50px;
+            height: 100px;
+            top: 150px;
+            z-index: 100;
+        }
+        
+        #gePre {
+            position: absolute;
+            left: 0px;
+        }
+        
+        #geNext {
+            position: absolute;
+            right: 300px;
+        }
+        
+        .item.active {
+            opacity: 1;
+            z-index: 10;
+        }
+        
+        .pointList {
+            list-style: none;
+            padding-left: 0px;
+            position: absolute;
+            right: 400px;
+            bottom: 20px;
+            z-index: 1000;
+        }
+        
+        .posint {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 100%;
+            float: left;
+            margin-right: 14px;
+            border: 2px solid #cccccc;
+            cursor: pointer;
+        }
+        
+        .posint.active {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="list">
+            <li>
+                <img src="../images/jiu1.jpg" alt="" class="item active">
+                <img src="../images/jiu2.jpg" alt="" class="item ">
+                <img src="../images/jiu3.jpg" alt="" class="item ">
+                <img src="../images/jiu4.jpg" alt="" class="item ">
+                <img src="../images/jiu5.jpg" alt="" class="item ">
+            </li>
+        </ul>
+        <ul class="pointList">
+            <li class="posint active" data-index='0'></li>
+            <li class="posint" data-index='1'></li>
+            <li class="posint" data-index='2'></li>
+            <li class="posint" data-index='3'></li>
+            <li class="posint" data-index='4'></li>
+
+        </ul>
+        <button type="button" class="btn" id="gePre">
+            < </button>
+
+        <button type="button" class="btn" id="geNext">></button>
+    </div>
+    <script>
+        var items = document.getElementsByClassName('item') /* 图片 */
+        var posints = document.getElementsByClassName('posint') /* 点 */
+        var goPreBtn = document.getElementById('gePre')
+        var geNextBtn = document.getElementById('geNext')
+        var index = 0;
+        var N = function() {
+            for (i = 0; i < items.length; i++) {
+                items[i].className = 'item'
+            }
+            for (i = 0; i < posints.length; i++) {
+                posints[i].className = 'posint'
+            }
+        }
+        var goIndex = function() {
+            N()
+            items[index].className = 'item active';
+            posints[index].className = 'posint active'
+        }
+        geNext = function() {
+            if (index < 4) {
+                index++;
+            } else {
+                index--;
+            }
+            goIndex()
+        }
+
+        gePre = function() {
+            if (index == 0) {
+                index = 4;
+            } else {
+                index--;
+            }
+            goIndex()
+        }
+        geNextBtn.addEventListener('click', function() {
+            geNext()
+        })
+        goPreBtn.addEventListener('click', function() {
+            gePre()
+        })
+        for (i = 0; i < posints.length; i++) {
+            posints[i].addEventListener('click', function() {
+                var pos = this.getAttribute('data-index')
+                index = pos;
+                goIndex()
+            })
+        }
+    </script>
+</body>
+
+</html>

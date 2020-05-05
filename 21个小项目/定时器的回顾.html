@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="start">开启</button>
+    <button id="stop">关闭</button>
+
+    <script>
+        var start = document.getElementById('start');
+        var stop = document.getElementById('stop');
+        // var num = 0,
+        //     timer = null;
+        // start.onclick = function() {
+        //     // 使用定时器的时候先清除定时器在开启定时器 防止我们用户频繁打开定时器
+        //     clearInterval(timer)
+        //     timer = setInterval(function() {
+        //         num++;
+        //         console.log(num);
+
+        //     }, 1000)
+        // }
+        // stop.onclick = function() {
+        //         clearInterval(timer)
+        //     }
+        var num = 0,
+            timer = null;
+        start.onclick = function() {
+            setInterval(timer)
+            timer = setInterval(function() {
+                num++;
+                console.log(num);
+
+            }, 100)
+        }
+        stop.onclick = function() {
+            clearInterval(timer)
+        }
+    </script>
+</body>
+
+</html>

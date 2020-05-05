@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #qe_code {
+            width: 130px;
+            height: 110px;
+            /* background-color: pink; */
+            margin: 0 auto;
+        }
+        
+        img {
+            float: left;
+            margin-left: 20px;
+            border: 1px solid #cccccc;
+        }
+        
+        span {
+            float: left;
+            width: 20px;
+            height: 20px;
+            /* background-color: red; */
+            margin-top: -92px;
+            margin-left: -2px;
+            border: 1px solid #cccccc;
+            line-height: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="qe_code">
+        <img src="./images/wx_cz.jpg" alt="">
+        <br>
+        <span id="close">X</span>
+    </div>
+    <script>
+        var close = document.getElementById('close')
+        var qe_code = document.getElementById('qe_code')
+
+        close.onclick = function() {
+            qe_code.style.display = 'none'
+        }
+    </script>
+</body>
+
+</html>

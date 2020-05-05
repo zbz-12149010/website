@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #clock {
+            width: 600px;
+            height: 600px;
+            background: url('./images/olock.jpg');
+            position: relative;
+        }
+        
+        #hour {
+            width: 10px;
+            height: 200px;
+            background-color: red;
+            border-radius: 20px;
+            position: absolute;
+            left: 50%;
+            top: 48px;
+            margin-left: -15px;
+        }
+        
+        #minute {
+            width: 15px;
+            height: 220px;
+            background-color: #000;
+            border-radius: 20px;
+            position: absolute;
+            left: 50%;
+            top: 48px;
+            margin-left: -15px;
+        }
+        
+        #secomd {
+            position: absolute;
+            width: 10px;
+            height: 250px;
+            background-color: green;
+            border-radius: 20px;
+            left: 50%;
+            top: 48px;
+            margin-left: -15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="clock">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="secomd"></div>
+    </div>
+    <script>
+        var hour = document.getElementById('hour')
+        var minute = document.getElementById('minute')
+        var secomd = document.getElementById('secomd')
+        setInterval(function() {
+            var now = new Date();
+            var s = now.getSeconds();
+            var m = now.getMinutes() + s / 60;
+            var h = now.getHours() % 12 + m / 60;
+            // 2.3旋转
+            second.style.transform = `rotate(${s*6}deg)`;
+            minute.style.transform = `rotate(${m*6}deg)`;
+            hour.style.transform = `rotate(${h*30}deg)`;
+
+
+        }, 10)
+    </script>
+</body>
+
+</html>

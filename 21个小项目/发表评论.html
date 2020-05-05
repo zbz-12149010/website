@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #wrap {
+            position: relative;
+        }
+        
+        #wrap.item {
+            font-size: 13px;
+        }
+        
+        #wrap.item.title {
+            width: 248px;
+            height: 360px;
+            line-height: 30px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .imgContainer {
+            width: 248px;
+            display: table-cell;
+            text-align: center;
+        }
+        
+        .price {
+            color: #e85022;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cols">
+        <button>3列</button>
+        <button>4列</button>
+        <button>5列</button>
+    </div>
+    <div id="wrap">
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu1.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu2.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu3.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu4.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu5.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu6.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu7.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu8.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu9.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu9.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu9.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu9.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="./images/jiu9.jpg" alt="">
+            </div>
+            <P class="title"> 纯白色短袖女春秋t血韩版国型宽服装2019潮</P>
+            <p class="price">￥69</p>
+        </div>
+    </div>
+    <script>
+        var btns = document.getElementsByTagName('button')
+        var items = document.getElementsByClassName('item')
+            // btns[0].onclick = function() {
+            //     bbj(3)
+            // }
+            // btns[1].onclick = function() {
+            //     bbj(4)
+            // }
+            // btns[2].onclick = function() {
+            //     bbj(5)
+            // }
+
+        // function bbj(colsNum) {
+        //     for (var i = 0; i < items.length; i++) {
+        //         var row = parseInt(i / colsNum)
+        //         var opj = parseInt(i % colsNum)
+        //         items[i].style.position = 'absolute'
+        //         items[i].style.top = (row * [i].offsetHeight) + 'px';
+        //         items[i].style.left = (opj * [i].offsetWidth) + 'px';
+
+        //     }
+        // }
+        btns[0].onclick = function() {
+            mjj(3)
+        }
+        btns[1].onclick = function() {
+            mjj(4)
+        }
+        btns[2].onclick = function() {
+            mjj(5)
+        }
+
+        function mjj(colsNum) {
+            for (i = 0; i < items.length; i++) {
+                var bbj = parseInt(i % colsNum)
+                var bbm = parseInt(i / colsNum)
+                items[i].style.position = 'absolute';
+                items[i].style.top = (bbj * [i].offsetHeight) + 'ps'
+                items[i].style.left = (bbm * [i].offsetHeight) + 'ps'
+
+            }
+        }
+    </script>
+</body>
+
+</html>

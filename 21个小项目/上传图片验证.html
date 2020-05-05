@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // jpg png gif jpeg
+        window.onload = function() {
+            // 1.获取标签
+            var file = document.getElementById('file')
+                // 2. 监听图片选择的变化
+            file.onchange = function() {
+                // 2.1获取上传的图片路径
+                var path = this.value;
+                /* C:\fakepath\mei1 - 副本.jpeg */
+                // 2.2获取.路径字符串中占的位置
+                var loc = path.lastIndexOf('.')
+                    // 2.3截取图片的路径
+                var suffix = path.substr(loc);
+                // 2.4统一转小写
+                var lower = suffix.toLowerCase();
+                // 2.5判断
+                if (lower === '.jpg' || lower === '.png' || lower === '.jpeg' || lower === '.gif') {
+                    alert('上传的图片格式正确')
+                } else {
+                    alert('上传的图片格式错误')
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <label for="file">上传图片格式验证:</label>
+    <input type="file" id="file">
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 1200px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #box {
+            border: 2px solid red;
+            width: 670px;
+            height: 70px;
+            padding-top: 670px;
+            background: url('./images/mei1-1.jpg')no-repeat;
+        }
+        
+        #box ul li {
+            display: inline-block;
+            margin-top: 75px;
+        }
+        
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    </head>
+
+    <body>
+        <div id="box">
+
+            <ul>
+                <li>
+                    <a href=""><img src="./images/mei1.jpg" alt="" class="item"></a>
+                </li>
+                <li>
+                    <a href=""><img src="./images/mei2.jpg" alt="" class="item"></a>
+                </li>
+                <li>
+                    <a href=""><img src="./images/mei3.jpg" alt="" class="item"></a>
+                </li>
+                <li>
+                    <a href=""><img src="./images/mei4.jpg" alt="" class="item"></a>
+                </li>
+                <li>
+                    <a href=""><img src="./images/mei5.jpg" alt="" class="item"></a>
+                </li>
+            </ul>
+        </div>
+        <script>
+            function $(id) {
+                return typeof id === 'string' ? document.getElementById(id) : null;
+            }
+            // var itmes = document.getElementsByClassName('item')
+            // for (var i = 0; i < itmes.length; i++) {
+            //     var item = itmes[i];
+            //     item.id = i + 1;
+            //     itmes[i].onmouseover = function() {
+            //         // console.log(this.id);
+            //         $('box').style.background = ` url('./images/mei1-${this.id}.jpg')no-repeat`
+            //     }
+            // }
+            var items = document.getElementsByClassName('item')
+                // for (i = 0; i < items.length; i++) {
+                //     item = items[i]
+                //     item.id = i + 1;
+                //     items[i].onmouseover = function() {
+                //         $('box').style.background = `url('./images/mei1-${this.id}.jpg')no-repeat`
+                //     }
+                // }
+            for (i = 0; i < items.length; i++) {
+                item = items[i]
+                item.id = i + 1;
+                items[i].onmouseover = function() {
+                    $('box').style.background = `url('./images/mei1-${this.id}.jpg')no-repeat`
+                }
+            }
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">隐藏</button>
+    <br>
+    <img src="../images/olock.jpg" alt="" id="new">
+    <script>
+        // 1.获取事件源
+        var obtn = document.getElementById('btn');
+        var img = document.getElementById('new')
+            // 2.绑定事件
+            // var isShow = true;
+            // obtn.onclick = function() {
+            //     // 3. 事件驱动程序
+            //     if (obtn.innerHTML === '隐藏') {
+            //         img.style.display = 'none'
+            //         obtn.innerHTML = '显示'
+            //         // isShow = 'false'
+            //     } else {
+            //         img.style.display = 'block'
+            //         obtn.innerHTML = '隐藏'
+            //         // isShow = true
+            //     }
+            // }
+            // obtn.onclick = function() {
+            //     if (obtn.innerHTML === '隐藏') {
+            //         img.style.display = 'none'
+            //         obtn.innerHTML = '显示'
+            //     } else {
+            //         img.style.display = 'block'
+            //         obtn.innerHTML = '隐藏'
+            //     }
+            // }
+        obtn.onclick = function() {
+            if (obtn.innerHTML === '隐藏') {
+                img.style.display = 'none';
+                obtn.innerHTML = '显示';
+
+            } else {
+                img.style.display = 'block'
+                obtn.innerHTML = '隐藏'
+            }
+        }
+    </script>
+</body>
+
+</html>

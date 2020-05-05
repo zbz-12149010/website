@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* img {
+            height: 500px;
+            width: 500px;
+        } */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            overflow: hidden;
+        }
+        
+        ul li {
+            height: 62px;
+            width: 46px;
+            list-style: none;
+            float: left;
+            margin-left: 10px;
+            margin-top: 20px;
+            border: 2px solid #fff;
+        }
+        
+        ul .active {
+            border-color: red;
+        }
+        
+        #bigImg {
+            width: 500px;
+            height: 400px;
+        }
+        
+        li img {
+            width: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/mei1.jpg" alt="" id="bigImg">
+    <ul>
+        <li class="active">
+            <a href=""><img src="./images/mei1.jpg" alt="" width="46px" class="smallImg"></a>
+        </li>
+        <li>
+            <a href=""><img src="./images/mei2.jpg" alt="" width="46px" class="smallImg"></a>
+        </li>
+        <li>
+            <a href=""><img src="./images/mei3.jpg" alt="" width="46px" class="smallImg"></a>
+        </li>
+        <li>
+            <a href=""><img src="./images/mei4.jpg" alt="" width="46px" class="smallImg"></a>
+        </li>
+        <li>
+            <a href=""><img src="./images/mei5.jpg" alt="" width="46px" class="smallImg"></a>
+        </li>
+    </ul>
+    <script>
+        var bigImg = document.getElementById('bigImg')
+        var smallImgs = document.getElementsByClassName('smallImg')
+            //         for (i = 0; i < smallImgs.length; i++) {
+            //             // 2.遍历几个,给每个img标签添加事件
+            //             smallImgs[i].onmouseover = function() {
+            //                 // 3.事件处理程序
+            //                 // 3.1在悬浮到每个li标签之前，先吧所有的li标签的类名都置为空值
+            //                 for (j = 0; j < smallImgs.length; j++) {
+            //                     smallImgs[j].parentNode.parentNode.setAttribute('class', '')
+            //                 }
+            //                 // 3.2修改大图的crc属性
+            //         var smallImgSrc = this.getAttribute('src');
+            //                 bigImg.setAttribute('src', smallImgSrc)
+
+        //         // 3.3给鼠标悬浮的img标签的父标签添加类
+        // this.parentNode.parentNode.setAttribute('class', 'active');
+        //     }
+        // }
+        // debugger
+        for (i = 0; i < smallImgs.length; i++) {
+            smallImgs[i].onmouseover = function() {
+                for (j = 0; j < smallImgs.length; j++) {
+                    smallImgs[j].parentNode.parentNode.setAttribute('class', '')
+                }
+                var smallImgSrc = this.getAttribute('src')
+                bigImg.setAttribute('src', smallImgSrc)
+                this.parentNode.parentNode.setAttribute('class', 'active')
+            }
+        }
+    </script>
+</body>
+
+</html>
